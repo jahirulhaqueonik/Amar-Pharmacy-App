@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDescriptionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_product_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:lineHeight="20sp"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:text="Working Environments - Great for medical, manufacturing,
+        restaurant or food service employee, especially widely apply to home kitchen and food manufacturing industry;
+
+Extremely Comfortable- non-woven cap is double-stitched elastic band which can keep caps flat and comfortable on the forehead,
+ it's lightweight(only 12gsm per cap), breathable and extremely comfortable to wear for a long time;
+
+Material- These disposable Caps are made from multi-ply polypropylene which is non-toxic and environmentally friendly;
+this unique advanced material can make these caps maintain your hairstyle during the working and keep your head clean and cozy;
+Material- These disposable Caps are made from multi-ply polypropylene which is non-toxic and environmentally friendly;
+this unique advanced material can make these caps maintain your hairstyle during the working and keep your head clean and cozy;
+Material- These disposable Caps are made from multi-ply polypropylene which is non-toxic and environmentally friendly;
+this unique advanced material can make these caps maintain your hairstyle during the working and keep your head clean and cozy;
+
+
+Easy to wear- The size is 24' which means these caps are easy to fit your head instead of worrying any damage to the product or your hairstyle, very touching, right .
+    Convenient and practical packaging- Product packaging is 100 pcs per bag. The packaging plastic bag is non-toxic and disposable, easy to open and very durable" />
+
+</FrameLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "381622970824",
+    "project_id": "amar-pharmacy",
+    "storage_bucket": "amar-pharmacy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381622970824:android:d649d5dd22198c9e8ff8fd",
+        "android_client_info": {
+          "package_name": "com.example.amarpharmacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381622970824-0ll407d5omm1dr00ui85t5r8ddf8okmr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3J6b5bQ3hQusqTwd6Ap4gEVPduLJX168"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381622970824-0ll407d5omm1dr00ui85t5r8ddf8okmr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

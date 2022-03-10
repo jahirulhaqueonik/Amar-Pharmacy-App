@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_amar_pharmacy"
+            android:icon="@mipmap/shop"
+            android:title="@string/amar_pharmacy" />
+        <item
+            android:id="@+id/nav_my_account"
+            android:icon="@mipmap/my_account"
+            android:title="@string/my_account" />
+        <item
+            android:id="@+id/nav_my_orders"
+            android:icon="@mipmap/cart_black"
+            android:title="@string/my_orders" />
+        <item
+            android:id="@+id/nav_my_cart"
+            android:icon="@mipmap/cart_black"
+            android:title="@string/my_cart" />
+
+        <item
+            android:id="@+id/nav_my_wishlist"
+            android:icon="@mipmap/wish_list"
+            android:title="@string/my_wishlist"/>
+
+    </group>
+
+    <item
+        android:id="@+id/nav_sign_out"
+        android:icon="@mipmap/sign_out_icon"
+        android:title="@string/sign_out" />
+</menu>
