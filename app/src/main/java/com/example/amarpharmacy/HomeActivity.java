@@ -88,10 +88,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             //todo: search
             invalidateOptionsMenu();
             return true;
-        } else if (id == R.id.main_notification_icon) {
-            //todo: notification system
-            return true;
-        } else if (id == R.id.main_cart_icon) {
+        }else if (id == R.id.main_cart_icon) {
             gotoFragment("My Cart", new MyCartFragment(), CART_FRAGMENT);
             //myCart();
             return true;
