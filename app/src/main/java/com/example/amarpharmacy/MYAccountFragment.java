@@ -22,7 +22,6 @@ public class MYAccountFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       signUpBtn.findViewById(R.id.sign_up_btn);
     }
 
     @Override
