@@ -7,19 +7,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.amarpharmacy.databinding.ActivityProductDetailsBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 //import android.widget.Toolbar;
 
@@ -40,15 +37,17 @@ public class ProductDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_details);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        // getSupportActionBar().getDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setDisplayShowTitleEnabled(true);
-      //  getSupportActionBar().setTitle("Delivery");
+     //   getSupportActionBar().setTitle("Delivery");
         /*ActivityProductDetailsBinding binding = ActivityProductDetailsBinding.inflate(getLayoutInflater());
-        setSupportActionBar(Objects.requireNonNull(Objects.requireNonNull(binding.appBar).toolbar));*/
+        setSupportActionBar(Objects.requireNonNull(Objects.requireNonNull(binding.appBar).toolbar));
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(true);*/
 
-
-        @NonNull ActivityProductDetailsBinding binding = ActivityProductDetailsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+     /*   @NonNull ActivityProductDetailsBinding binding = ActivityProductDetailsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());*/
       //  setSupportActionBar(binding.appBarHome.toolbar);
 
        // getSupportActionBar().hide();
@@ -60,6 +59,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
 
         List<Integer> productImages = new ArrayList<>();
+        productImages.add(R.drawable.imron_hem_7120);
         productImages.add(R.drawable.imron_hem_7120);
         productImages.add(R.drawable.imron_hem_7120);
         productImages.add(R.drawable.imron_hem_7120);
@@ -79,7 +79,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 productDetailsViewpager.setCurrentItem(tab.getPosition());
-                Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(true);
             }
 
             @Override
@@ -119,9 +118,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
         if (id == android.R.id.home) {
             finish();
             return true;
-        } else if (id == R.id.main_search_icon) {
-            //todo search
-            return true;
         } else if (id == R.id.main_cart_icon) {
             //todo: cart system
             return true;
@@ -132,7 +128,12 @@ public class ProductDetailsActivity extends AppCompatActivity {
 }
 
 
-
+/*
+else if (id == R.id.main_search_icon) {
+        //todo search
+        return true;
+        }
+*/
 
 
 

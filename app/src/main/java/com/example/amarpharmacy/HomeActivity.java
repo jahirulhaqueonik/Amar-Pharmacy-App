@@ -8,13 +8,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.amarpharmacy.databinding.ActivityHomeBinding;
@@ -23,7 +23,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+//import android.widget.Toolbar;
+
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private FrameLayout frameLayout;
     private static final int MAIN_FRAGMENT = 0;
@@ -36,45 +38,33 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private NavigationView navigationView;
     private static int currentFragment = -1;
     private ImageView actionBarLogo;
-    public  DrawerLayout drawer;
+
+
     private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
-        binding = ActivityHomeBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        setSupportActionBar(binding.appBarHome.toolbar);
-
-        //my code
-        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         actionBarLogo = findViewById(R.id.actionbar_logo);
+        DrawerLayout drawer  = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
-        drawer = binding.drawerLayout;
-        navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-     /*   mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
-                .setOpenableLayout(drawer)
-                .build();*/
-
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.main_frame_layout);
-        NavController navController = Objects.requireNonNull(navHostFragment).getNavController();
-        //   NavController navController = findNavController(this, R.id.nav_host_fragment_content_home);
-        //   NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        //   NavigationUI.setupWithNavController(navigationView, navController);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(0).setChecked(true);
-        //  setSupportActionBar(Objects.requireNonNull(binding.appBarHome).toolbar);
         frameLayout = findViewById(R.id.main_frame_layout);
         setFragment(new MainFragment(), MAIN_FRAGMENT);
-        //setSupportActionBar(Objects.requireNonNull(binding.appBarHome).toolbar);
+
 
     }
 
@@ -95,7 +85,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.main_search_icon) {
             //todo: search
             invalidateOptionsMenu();
-
             return true;
         } else if (id == R.id.main_notification_icon) {
             //todo: notification system
@@ -112,7 +101,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private void gotoFragment(String title, Fragment fragment, int fragmentNo) {
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         actionBarLogo.setVisibility(View.GONE);
         invalidateOptionsMenu();
         getSupportActionBar().setTitle(title);
@@ -164,13 +153,5 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
         }
     }
-
-/*    public boolean onSupportNavigateUp() {
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.main_frame_layout);
-        NavController navController = Objects.requireNonNull(navHostFragment).getNavController();
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }*/
-
 
 }

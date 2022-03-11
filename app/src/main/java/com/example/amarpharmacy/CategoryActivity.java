@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,18 +17,20 @@ import java.util.List;
 public class CategoryActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private RecyclerView recyclerView;
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-           // com.example.amarpharmacy.databinding.ActivityHomeBinding binding = ActivityHomeBinding.inflate(getLayoutInflater());
-         // etSupportActionBar(Objects.requireNonNull(Objects.requireNonNull(binding.appBarHome).toolbar));
-        //String title = getIntent().getStringExtra("CategoryName");
-        //Objects.requireNonNull(getSupportActionBar()).setTitle(title);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       setSupportActionBar(toolbar);
+      //  getSupportActionBar().getDisplayShowTitleEnabled(false);
+        String title = getIntent().getStringExtra("CategoryName");
+        getSupportActionBar().setTitle(title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         RecyclerView categoryRecyclerView = findViewById(R.id.category_recyclerview);
