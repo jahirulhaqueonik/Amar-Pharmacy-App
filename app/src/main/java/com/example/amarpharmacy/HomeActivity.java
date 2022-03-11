@@ -80,20 +80,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         //statements
-        if (id == R.id.main_search_icon) {
-            //todo: search
-            invalidateOptionsMenu();
-            return true;
-        }else if (id == R.id.main_cart_icon) {
+       if (id == R.id.main_cart_icon) {
             gotoFragment("My Cart", new MyCartFragment(), CART_FRAGMENT);
             //myCart();
             return true;
 
-        }
+        } /*else if (id == R.id.main_search_icon) {
+            //todo: search
+            invalidateOptionsMenu();
+            return true;
+        }*/
 
         return super.onOptionsItemSelected(item);
     }

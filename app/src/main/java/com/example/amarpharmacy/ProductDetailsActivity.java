@@ -1,6 +1,5 @@
 package com.example.amarpharmacy;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -100,8 +99,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
         buyNowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent deliveryIntent = new Intent(ProductDetailsActivity.this,DeliveryActivity.class);
-                startActivity(deliveryIntent);
+                buyNowBtn.setText("Thank You For Your Order Request.We Will Process");
+              //  Intent deliveryIntent = new Intent(ProductDetailsActivity.this,HomeActivity.class);
+            //    startActivity(deliveryIntent);
             }
         });
 
