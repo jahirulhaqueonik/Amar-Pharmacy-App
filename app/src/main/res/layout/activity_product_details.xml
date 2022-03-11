@@ -57,28 +57,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <LinearLayout
-            android:id="@+id/add_to_cart_btn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:drawablePadding="8dp"
-                android:gravity="center"
-                android:text="@string/add_to_cart"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:drawableEndCompat="@mipmap/cart_black" />
-
-        </LinearLayout>
-
         <Button
             android:id="@+id/buy_now_btn"
             android:layout_width="match_parent"

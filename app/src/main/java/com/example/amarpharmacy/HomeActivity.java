@@ -1,5 +1,6 @@
 package com.example.amarpharmacy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.amarpharmacy.databinding.ActivityHomeBinding;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
@@ -133,9 +135,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_my_cart) {
             gotoFragment("My Cart", new MyCartFragment(), CART_FRAGMENT);
             // myCart();
-        } else if (id == R.id.nav_my_wishlist) {
-
         } else if (id == R.id.nav_sign_out) {
+
+            FirebaseAuth.getInstance().signOut();
+            Intent registerIntent = new Intent(HomeActivity.this,RegisterActivity.class);
+            startActivity(registerIntent);
+            finish();
 
         }
 

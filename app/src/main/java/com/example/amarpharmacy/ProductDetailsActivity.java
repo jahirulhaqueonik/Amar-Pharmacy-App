@@ -39,9 +39,14 @@ public class ProductDetailsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         // getSupportActionBar().getDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        String title = getIntent().getStringExtra("productTitle");
+        getSupportActionBar().setTitle(title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setDisplayShowTitleEnabled(true);
-     //   getSupportActionBar().setTitle("Delivery");
+        //getSupportActionBar().setTitle("Delivery");
         /*ActivityProductDetailsBinding binding = ActivityProductDetailsBinding.inflate(getLayoutInflater());
         setSupportActionBar(Objects.requireNonNull(Objects.requireNonNull(binding.appBar).toolbar));
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(true);*/
@@ -126,6 +131,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+
+
 
 
 /*

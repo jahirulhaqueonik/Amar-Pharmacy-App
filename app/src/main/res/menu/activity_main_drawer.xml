@@ -20,12 +20,7 @@
             android:id="@+id/nav_my_cart"
             android:icon="@mipmap/cart_black"
             android:title="@string/my_cart" />
-
-        <item
-            android:id="@+id/nav_my_wishlist"
-            android:icon="@mipmap/wish_list"
-            android:title="@string/my_wishlist"/>
-
+        
     </group>
 
     <item
